@@ -1,0 +1,29 @@
+---
+id: 0
+name: Testnet deployment
+network: testnet
+stacks-node: "https://api.testnet.hiro.so"
+bitcoin-node: "http://blockstack:blockstacksystem@bitcoind.testnet.stacks.co:18332"
+plan:
+  batches:
+    - id: 0
+      transactions:
+        - requirement-publish:
+            contract-id: ST1NXBK3K5YYMD6FD41MVNP3JS1GABZ8TRVX023PT.sip-010-trait-ft-standard
+            remap-sender: ST85M7YZYMEP21XVMSZBT0AWFD92M9SS53S9YZ4V
+            remap-principals:
+              ST1NXBK3K5YYMD6FD41MVNP3JS1GABZ8TRVX023PT: ST85M7YZYMEP21XVMSZBT0AWFD92M9SS53S9YZ4V
+            cost: 8390
+            path: ".\\.cache\\requirements\\ST1NXBK3K5YYMD6FD41MVNP3JS1GABZ8TRVX023PT.sip-010-trait-ft-standard.clar"
+            clarity-version: 1
+      epoch: "2.05"
+    - id: 1
+      transactions:
+        - contract-publish:
+            contract-name: MySIP10Token
+            expected-sender: ST85M7YZYMEP21XVMSZBT0AWFD92M9SS53S9YZ4V
+            cost: 41380436
+            path: "contracts\\MySIP10Token.clar"
+            anchor-block-only: true
+            clarity-version: 2
+      epoch: "2.5"
